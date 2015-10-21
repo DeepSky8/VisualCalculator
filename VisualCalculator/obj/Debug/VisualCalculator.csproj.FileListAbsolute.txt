@@ -33,3 +33,13 @@ C:\Ongoing Projects\Ex_Files_C_Sharp_EssT\Exercise Files\10_Visual\VisualCalcula
 C:\Ongoing Projects\cSharp\VisualCalculator\VisualCalculator\bin\Debug\VisualCalculator.exe.config
 C:\Ongoing Projects\cSharp\VisualCalculator\VisualCalculator\obj\Debug\VisualCalculator.exe
 C:\Ongoing Projects\cSharp\VisualCalculator\VisualCalculator\obj\Debug\VisualCalculator.pdb
+C:\Ongoing Projects\cSharp\VisualCalculator\VisualCalculator\bin\Debug\VisualCalculator.exe
+C:\Ongoing Projects\cSharp\VisualCalculator\VisualCalculator\bin\Debug\VisualCalculator.pdb
+C:\Ongoing Projects\cSharp\VisualCalculator\VisualCalculator\obj\Debug\VisualCalculator.csprojResolveAssemblyReference.cache
+C:\Ongoing Projects\cSharp\VisualCalculator\VisualCalculator\obj\Debug\MainWindow.baml
+C:\Ongoing Projects\cSharp\VisualCalculator\VisualCalculator\obj\Debug\MainWindow.g.cs
+C:\Ongoing Projects\cSharp\VisualCalculator\VisualCalculator\obj\Debug\App.g.cs
+C:\Ongoing Projects\cSharp\VisualCalculator\VisualCalculator\obj\Debug\VisualCalculator_MarkupCompile.cache
+C:\Ongoing Projects\cSharp\VisualCalculator\VisualCalculator\obj\Debug\VisualCalculator.g.resources
+C:\Ongoing Projects\cSharp\VisualCalculator\VisualCalculator\obj\Debug\VisualCalculator.Properties.Resources.resources
+C:\Ongoing Projects\cSharp\VisualCalculator\VisualCalculator\obj\Debug\VisualCalculator.csproj.GenerateResource.Cache

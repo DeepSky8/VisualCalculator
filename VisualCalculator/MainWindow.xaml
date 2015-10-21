@@ -17,16 +17,16 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button Content="1" Width="50" Height="50" FontSize="36" Grid.Column="0" Grid.Row="0" Click="BtnEntry_Click"/>
-            <Button Content="2" Width="50" Height="50" FontSize="36" Grid.Column="1" Grid.Row="0" Click="BtnEntry_Click"/>
-            <Button Content="3" Width="50" Height="50" FontSize="36" Grid.Column="2" Grid.Row="0" Click="BtnEntry_Click"/>
-            <Button Content="4" Width="50" Height="50" FontSize="36" Grid.Column="0" Grid.Row="1" Click="BtnEntry_Click"/>
-            <Button Content="5" Width="50" Height="50" FontSize="36" Grid.Column="1" Grid.Row="1" Click="BtnEntry_Click"/>
-            <Button Content="6" Width="50" Height="50" FontSize="36" Grid.Column="2" Grid.Row="1" Click="BtnEntry_Click"/>
-            <Button Content="7" Width="50" Height="50" FontSize="36" Grid.Column="0" Grid.Row="2" Click="BtnEntry_Click"/>
-            <Button Content="8" Width="50" Height="50" FontSize="36" Grid.Column="1" Grid.Row="2" Click="BtnEntry_Click"/>
-            <Button Content="9" Width="50" Height="50" FontSize="36" Grid.Column="2" Grid.Row="2" Click="BtnEntry_Click"/>
-            <Button Content="0" Width="50" Height="50" FontSize="36" Grid.Column="0" Grid.Row="3" Click="BtnEntry_Click"/>
+            <Button x:Name="_1" Content="1" Width="50" Height="50" FontSize="36" Grid.Column="0" Grid.Row="0" Click="BtnEntry_Click"/>
+            <Button x:Name="_2" Content="2" Width="50" Height="50" FontSize="36" Grid.Column="1" Grid.Row="0" Click="BtnEntry_Click"/>
+            <Button x:Name="_3" Content="3" Width="50" Height="50" FontSize="36" Grid.Column="2" Grid.Row="0" Click="BtnEntry_Click"/>
+            <Button x:Name="_4" Content="4" Width="50" Height="50" FontSize="36" Grid.Column="0" Grid.Row="1" Click="BtnEntry_Click"/>
+            <Button x:Name="_5" Content="5" Width="50" Height="50" FontSize="36" Grid.Column="1" Grid.Row="1" Click="BtnEntry_Click"/>
+            <Button x:Name="_6" Content="6" Width="50" Height="50" FontSize="36" Grid.Column="2" Grid.Row="1" Click="BtnEntry_Click"/>
+            <Button x:Name="_7" Content="7" Width="50" Height="50" FontSize="36" Grid.Column="0" Grid.Row="2" Click="BtnEntry_Click"/>
+            <Button x:Name="_8" Content="8" Width="50" Height="50" FontSize="36" Grid.Column="1" Grid.Row="2" Click="BtnEntry_Click"/>
+            <Button x:Name="_9" Content="9" Width="50" Height="50" FontSize="36" Grid.Column="2" Grid.Row="2" Click="BtnEntry_Click"/>
+            <Button x:Name="_0" Content="0" Width="50" Height="50" FontSize="36" Grid.Column="0" Grid.Row="3" Click="BtnEntry_Click"/>
             <Button Content="." Width="50" Height="50" FontSize="36" Grid.Column="2" Grid.Row="3" Click="BtnEntry_Click"/>
             <Button Content="C" Width="50" Height="50" FontSize="36" Grid.Column="4" Grid.Row="0" Click="BtnClear_Click"/>
             <Button Content="*" Width="50" Height="50" FontSize="36" Grid.Column="3" Grid.Row="0" Click="BtnMultiply_Click"/>
