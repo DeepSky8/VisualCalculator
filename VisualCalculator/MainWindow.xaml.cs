@@ -155,12 +155,6 @@ namespace VisualCalculator
                 isNewNumber = true;
                 math = Operation.Subtract;
             }
-
-            //firstNumber = Double.Parse(txtOut.Text);
-            //haveFirstNumber = true;
-            //math = Operation.Subtract;
-            //isNewNumber = true;
-            //haveSecondNumber = true;
         }
         /// <summary>
         /// Stores the currently-displayed double. If two user-selected doubles are stored, the previous math operation is performed upon those two doubles. The result is stored in var firstNumber, and the math operation enum is changed to Multiply.
@@ -187,12 +181,6 @@ namespace VisualCalculator
                 isNewNumber = true;
                 math = Operation.Multiply;
             }
-
-            //firstNumber = Double.Parse(txtOut.Text);
-            //haveFirstNumber = true;
-            //math = Operation.Multiply;
-            //isNewNumber = true;
-            //haveSecondNumber = true;
         }
         /// <summary>
         /// Stores the currently-displayed double. If two user-selected doubles are stored, the previous math operation is performed upon those two doubles. The result is stored in var firstNumber, and the math operation enum is changed to Divide.
@@ -219,13 +207,6 @@ namespace VisualCalculator
                 isNewNumber = true;
                 math = Operation.Divide;
             }
-
-            //firstNumber = Double.Parse(txtOut.Text);
-            //haveFirstNumber = true;
-            //math = Operation.Divide;
-            //isNewNumber = true;
-            //haveSecondNumber = true;
-
         }
 
         //Clear the current results
@@ -242,7 +223,7 @@ namespace VisualCalculator
 
         //Handle the Equals button
         /// <summary>
-        /// If there is no stored value, this method stores the displayed value in var firstNumber. If there is a stored value, this method stores the displayed value in var secondNumber. The most recently called operation is performed upon the two stored values. The result is both displayed and stored in var firstNumber
+        /// If there is no stored value, this method stores the displayed value in var firstNumber. If there is a previously stored value, this method stores the displayed value in var secondNumber. The most recently called operation is performed upon the two stored values. The result is both displayed and stored in var firstNumber
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
