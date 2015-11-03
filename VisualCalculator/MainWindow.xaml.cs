@@ -15,10 +15,8 @@ namespace VisualCalculator
         enum Operation { Add, Subtract, Multiply, Divide, Equals, Start };
         Operation math = Operation.Start;
         bool isNewNumber = true;
-        bool haveFirstNumber = false;
-        bool haveSecondNumber = false;
-        double firstNumber = 0;
-        double secondNumber = 0;
+        double? firstNumber = null;
+        double? secondNumber = null;
 
 
         public MainWindow()
@@ -53,50 +51,50 @@ namespace VisualCalculator
         /// <param name="operation"></param>
         private void Calculate(Operation operation)
         {
-            if (math == Operation.Divide && (firstNumber == 0 || secondNumber == 0))
+            try
             {
-                math = Operation.Start;
-                currentValue = 0;
-                txtOut.Text = "0";
-            }
-            if (math == Operation.Multiply && (firstNumber == 0 || secondNumber == 0))
-            {
-                math = Operation.Start;
-                currentValue = 0;
-                txtOut.Text = "0";
-            }
-            else
-            {
-                switch (operation)
+                if (math == Operation.Divide && (firstNumber == 0 || secondNumber == 0))
                 {
-                    case Operation.Add:
-                        currentValue = (firstNumber + secondNumber);
-                        break;
-                    case Operation.Subtract:
-                        currentValue = (firstNumber - secondNumber);
-                        break;
-                    case Operation.Multiply:
-                        currentValue = (firstNumber * secondNumber);
-                        break;
-                    case Operation.Divide:
-                        currentValue = (firstNumber / secondNumber);
-                        break;
-                    case Operation.Equals:
-                        txtOut.Text = currentValue.ToString();
-                        break;
-                    case Operation.Start:
-                        txtOut.Text = "0";
-                        firstNumber = 0;
-                        secondNumber = 0;
-                        isNewNumber = true;
-                        haveFirstNumber = false;
-                        haveSecondNumber = false;
-                        break;
-                    default:
-                        txtOut.Text = "burp!";
-                        break;
-
+                    math = Operation.Start;
+                    currentValue = 0;
+                    txtOut.Text = "0";
                 }
+                else
+                {
+                    switch (operation)
+                    {
+                        case Operation.Add:
+                            currentValue = ((double)firstNumber + (double)secondNumber);
+                            break;
+                        case Operation.Subtract:
+                            currentValue = (double)(firstNumber - (double)secondNumber);
+                            break;
+                        case Operation.Multiply:
+                            currentValue = ((double)firstNumber * (double)secondNumber);
+                            break;
+                        case Operation.Divide:
+                            currentValue = ((double)firstNumber / (double)secondNumber);
+                            break;
+                        case Operation.Equals:
+                            txtOut.Text = currentValue.ToString();
+                            break;
+                        case Operation.Start:
+                            txtOut.Text = "0";
+                            firstNumber = null;
+                            secondNumber = null;
+                            isNewNumber = true;
+                            break;
+                        default:
+                            txtOut.Text = "burp!";
+                            break;
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
 
         }
@@ -110,12 +108,10 @@ namespace VisualCalculator
         /// <param name="e"></param>
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            if (!haveFirstNumber)
+            if (!firstNumber.HasValue)
             {
                 firstNumber = Double.Parse(txtOut.Text);
-                haveFirstNumber = true;
                 isNewNumber = true;
-                math = Operation.Add;
             }
             else
             {
@@ -123,12 +119,10 @@ namespace VisualCalculator
                 Calculate(math);
                 txtOut.Text = currentValue.ToString();
                 firstNumber = currentValue;
-                secondNumber = 0;
-                haveSecondNumber = false;
+                secondNumber = null;
                 isNewNumber = true;
-                math = Operation.Add;
             }
-
+            math = Operation.Add;
         }
         /// <summary>
         /// Stores the currently-displayed double. If two user-selected doubles are stored, the previous math operation is performed upon those two doubles. The result is stored in var firstNumber, and the math operation enum is changed to Subtract.
@@ -137,12 +131,10 @@ namespace VisualCalculator
         /// <param name="e"></param>
         private void BtnSubtract_Click(object sender, RoutedEventArgs e)
         {
-            if (!haveFirstNumber)
+            if (!firstNumber.HasValue)
             {
                 firstNumber = Double.Parse(txtOut.Text);
-                haveFirstNumber = true;
                 isNewNumber = true;
-                math = Operation.Subtract;
             }
             else
             {
@@ -150,11 +142,10 @@ namespace VisualCalculator
                 Calculate(math);
                 txtOut.Text = currentValue.ToString();
                 firstNumber = currentValue;
-                secondNumber = 0;
-                haveSecondNumber = false;
+                secondNumber = null;
                 isNewNumber = true;
-                math = Operation.Subtract;
             }
+            math = Operation.Subtract;
         }
         /// <summary>
         /// Stores the currently-displayed double. If two user-selected doubles are stored, the previous math operation is performed upon those two doubles. The result is stored in var firstNumber, and the math operation enum is changed to Multiply.
@@ -163,12 +154,10 @@ namespace VisualCalculator
         /// <param name="e"></param>
         private void BtnMultiply_Click(object sender, RoutedEventArgs e)
         {
-            if (!haveFirstNumber)
+            if (!firstNumber.HasValue)
             {
                 firstNumber = Double.Parse(txtOut.Text);
-                haveFirstNumber = true;
                 isNewNumber = true;
-                math = Operation.Multiply;
             }
             else
             {
@@ -176,11 +165,10 @@ namespace VisualCalculator
                 Calculate(math);
                 txtOut.Text = currentValue.ToString();
                 firstNumber = currentValue;
-                secondNumber = 0;
-                haveSecondNumber = false;
+                secondNumber = null;
                 isNewNumber = true;
-                math = Operation.Multiply;
             }
+            math = Operation.Multiply;
         }
         /// <summary>
         /// Stores the currently-displayed double. If two user-selected doubles are stored, the previous math operation is performed upon those two doubles. The result is stored in var firstNumber, and the math operation enum is changed to Divide.
@@ -189,12 +177,10 @@ namespace VisualCalculator
         /// <param name="e"></param>
         private void BtnDivide_Click(object sender, RoutedEventArgs e)
         {
-            if (!haveFirstNumber)
+            if (!firstNumber.HasValue)
             {
                 firstNumber = Double.Parse(txtOut.Text);
-                haveFirstNumber = true;
                 isNewNumber = true;
-                math = Operation.Divide;
             }
             else
             {
@@ -202,11 +188,10 @@ namespace VisualCalculator
                 Calculate(math);
                 txtOut.Text = currentValue.ToString();
                 firstNumber = currentValue;
-                secondNumber = 0;
-                haveSecondNumber = false;
+                secondNumber = null;
                 isNewNumber = true;
-                math = Operation.Divide;
             }
+            math = Operation.Divide;
         }
 
         //Clear the current results
@@ -229,7 +214,7 @@ namespace VisualCalculator
         /// <param name="e"></param>
         private void BtnEquals_Click(object sender, RoutedEventArgs e)
         {
-            if (!haveFirstNumber)
+            if (!firstNumber.HasValue)
             {
                 firstNumber = Double.Parse(txtOut.Text);
                 txtOut.Text = firstNumber.ToString();
@@ -240,9 +225,7 @@ namespace VisualCalculator
                 Calculate(math);
                 Calculate(Operation.Equals);
                 isNewNumber = true;
-                haveFirstNumber = true;
-                haveSecondNumber = false;
-                secondNumber = 0;
+                secondNumber = null;
                 math = Operation.Start;
             }
 
